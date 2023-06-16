@@ -6,7 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title> {{$settings->site_name}}</title>
-
+<style>
+    @media only screen and (max-width: 500px) {
+    
+        .d-visible-md-none {
+            display:flex;
+            flex-wrap: wrap;
+            max-width: 200px;
+        }
+    }
+</style>
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{asset('/images/fav.png')}}" type="image/x-icon"/>
 
