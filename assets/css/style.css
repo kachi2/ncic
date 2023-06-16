@@ -115,6 +115,8 @@ legend {
     white-space: normal;
 }
 
+
+
 /* Allow only vertical resizing of textareas. */
 textarea {
     resize: vertical;
@@ -204,6 +206,8 @@ h3,
     font-weight: 600;
     margin-bottom: 15px;
 }
+
+
 
 @media only screen and (max-width: 767.98px) {
 
@@ -327,6 +331,8 @@ button:focus {
         padding: 10px 20px;
     }
 }
+
+
 
 .btn:focus,
 .btn:active {
@@ -1733,6 +1739,8 @@ button:focus {
 }
 
 @media only screen and (max-width: 479.98px) {
+
+
     .info-item {
         margin-bottom: 15px;
     }
@@ -2370,6 +2378,7 @@ button:focus {
 }
 
 @media only screen and (max-width: 479.98px) {
+ 
     .off-canvas-wrapper .off-canvas-inner {
         width: 220px;
     }
