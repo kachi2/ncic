@@ -7,7 +7,7 @@
                     <!-- Start Single Footer Widget-item -->
                     <div class="widget-item">
                         <div class="widget-body">
-                            <img class="mb-24" src="{{asset('/assets/logo.png')}}" alt="Logo"/>
+                            <img class="mb-24" src="{{$settings->logo}}" alt="Logo"/>
                             <p style="color:#211d1d">{{$settings->about}}.</p>
                             <div class="social-icons social-icons--two mt-22">
                                 <a href="{{$settings->facebook}}"><i class="fa fa-facebook"></i></a>
