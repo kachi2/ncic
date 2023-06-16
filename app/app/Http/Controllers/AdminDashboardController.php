@@ -7,7 +7,7 @@ use App\Models\AppliedJob;
 use App\Models\Blog;
 use App\Models\ClientJob;
 use Illuminate\Http\Request;
-
+ 
 class AdminDashboardController extends Controller
 {
 
