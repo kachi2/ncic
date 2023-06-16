@@ -37,7 +37,7 @@
                 <div class="navigation-menu-tab-header" data-toggle="tooltip" title="Admin" data-placement="right">
                     <a href="#" class="nav-link" data-toggle="dropdown" aria-expanded="false">
                         <figure class="avatar avatar-sm">
-                                 <img src="{{$settings->logo}}" height="10px" width="10px">
+                                 <img src="{{asset('/assets/'.$settings->logo)}}" height="10px" width="10px">
                         </figure>
                     </a>
                 </div>
@@ -78,8 +78,8 @@
             <div>
                 <div id="navigation-logo">
                     <a href="{{route('admin.index')}}">
-                        <img class="logo" src="{{$settings->logo}}" height="auto" width="120px">
-                        <img class="logo-light" src="{{$settings->logo}}" height="auto" width="120px" alt="light logo">
+                        <img class="logo" src="{{asset('/assets/'.$settings->logo)}}" height="auto" width="120px">
+                        <img class="logo-light" src="{{asset('/assets/'.$settings->logo)}}" height="auto" width="120px" alt="light logo">
                     </a>
                 </div>
             </div>

@@ -42,7 +42,7 @@
                 <div class="col-5 col-lg-2">
                     <!-- Start Logo Area -->
                     <div class="logo-area">
-                        <a href="{{route('index')}}"><img src="{{$settings->logo}}"  alt="Logo"/></a>
+                        <a href="{{route('index')}}"><img src="{{asset('/assets/'.$settings->logo)}}"  alt="Logo"/></a>
                     </div>
                     <!-- End Logo Area -->
                 </div>
