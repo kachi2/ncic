@@ -36,7 +36,7 @@ class RequestServiceMail extends Mailable
     {
         return new Envelope(
             subject: 'Request Service Mail',
-            from: new Address('contact@ncicworld.com', 'Ncicworld'),
+            from: new Address('contact@otegeeconcepts.com', 'otegeeconcepts'),
         );
     }
 

@@ -33,7 +33,7 @@
                 <!-- Start Why Choose Content -->
                 <div class="why-choose-content-wrap mt-md-84 mt-sm-52">
                     <div class="section-title-wrap mb-34">
-                        <h2 class="mb-2">Great ncicworld FAQs</h2>
+                        <h2 class="mb-2">Great otegeeconcepts FAQs</h2>
                     </div>
 
                     <div class="why-choose-content-inner">

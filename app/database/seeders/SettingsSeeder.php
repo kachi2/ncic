@@ -18,7 +18,7 @@ class SettingsSeeder extends Seeder
         //
        
         $data = [
-            ['logo' => 'logo.png', 'site_name' => 'Greatncicworld', 'site_phone' => '08039366207',  'site_email' => 'mikkynoble@gmail.com',  'site_copyright'=> 'All right reserved', 'opening_hours' => 'Mon - Fri, 9pm - 5pm' ]
+            ['logo' => 'logo.png', 'site_name' => 'Greatotegeeconcepts', 'site_phone' => '08039366207',  'site_email' => 'mikkynoble@gmail.com',  'site_copyright'=> 'All right reserved', 'opening_hours' => 'Mon - Fri, 9pm - 5pm' ]
         ];
 
         foreach($data as $dd){

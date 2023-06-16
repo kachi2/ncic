@@ -132,7 +132,7 @@ class PagesController extends Controller
         ];
         Session::flash('message', 'Request sent Successfully');
         Session::flash('alert', 'success');
-        Mail::to('contact@ncicworld.com')->send(new ContactUs($data));
+        Mail::to('contact@otegeeconcepts.com')->send(new ContactUs($data));
         // Mail::to('noreply@greatjasmine.com.ng')->send(new ContactUs($data));
         return back();
     }

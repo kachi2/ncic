@@ -76,7 +76,7 @@
             <div class="col-lg-10 m-auto">
                 <!-- Start Section Title -->
                 <div class="section-title-wrap layout--2 white mb-38">
-                    <h4 style="color: #fff">Need any advice on how best NCIC can serve you?</h4>
+                    <h4 style="color: #fff">Need any advice on how best Otegeeconcepts can serve you?</h4>
                     <p style="color:#fff; font-size:25px; text-align:center; font-weight:bolder">Do contact us at {{$settings->site_email}} or call {{$settings->site_phone}}</p>
                     
                      
