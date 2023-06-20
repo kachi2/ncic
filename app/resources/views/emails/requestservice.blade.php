@@ -65,7 +65,7 @@
     </tr>
 
 </tbody></table>
-<p>If you have any issues or complaints regarding any transaction, kindly send us an email at support@otegeeconcepts.com</p>
+<p>If you have any issues or complaints regarding any transaction, kindly send us an email at info@otegeeconcepts.com</p>
 
             </td>
         </tr>
