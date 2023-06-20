@@ -7,7 +7,7 @@
             <tbody>
             <tr>
                 <td style="text-align:center;padding-bottom:15px">
-                    <img style="max-height:50px;width:auto" src="{{asset('assets/logo.png')}}" alt="{{$settings->site_name}}" class="CToWUd">
+                    <img style="max-height:50px;width:auto" src="{{asset('assets/'.$settings->logo)}}" alt="{{$settings->site_name}}" class="CToWUd">
                 </td>
             </tr>
             </tbody>
