@@ -96,7 +96,7 @@ class ClientJobController extends Controller
 
 
         if(!$request->key || empty($request->services)){
-            Session::flash('message', 'Some fields are missing');
+            Session::flash('message', 'Please select the services');
             Session::flash('alert', 'danger');
             return back()->withInput($request->all());
         }
