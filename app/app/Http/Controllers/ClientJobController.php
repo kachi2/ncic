@@ -93,10 +93,13 @@ class ClientJobController extends Controller
 
     public function RequestService(Request $request){
 
-        if(!$request->key){
-            return back()->withInput();
-        }
 
+
+        if(!$request->key || empty($request->services)){
+            Session::flash('message', 'Some fields are missing');
+            Session::flash('alert', 'danger');
+            return back()->withInput($request->all());
+        }
        // dd($request->services);
         $data = [
             'name' => $request->name,
