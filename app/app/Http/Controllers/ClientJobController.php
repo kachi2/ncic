@@ -80,7 +80,7 @@ class ClientJobController extends Controller
 
        }
     //    Mail::to(['noreply@greatjasmine.com.ng'])->send(new SendJobEmail($data));
-       Mail::to(['info@otegeeconcepts.com.ng'])->send(new SendJobEmail($data));
+       Mail::to(['jobs@otegeeconcepts.com.ng'])->send(new SendJobEmail($data));
       
        //Mail::to($request->email)->send(new SendClientEmail($data));
        
