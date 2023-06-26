@@ -65,21 +65,7 @@
 
                         </div>
 
-                        <div class="row">
-                            <div class="col-12">
-                                <!-- Start Pagination Wrap -->
-                                <div class="pagination-wrap mt-60 mt-md-40 mt-sm-40">
-                                    <ul class="pagination justify-content-center">
-                                        <li><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                                        <li><a href="#" class="current">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                                    </ul>
-                                </div>
-                                <!-- End Pagination Wrap -->
-                            </div>
-                        </div>
+                     
                     </div>
                 </div>
 
