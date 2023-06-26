@@ -10,6 +10,7 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManagePagesController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClientLogoController;
 use App\Http\Controllers\FaqContoller;
@@ -128,6 +129,14 @@ Route::middleware('auth')->group(function(){
         Route::get('/website/faq/edit/{id}', 'Edit')->name('faqEdit');
         Route::post('/website/faq/update/{id}', 'Update')->name('faqUpdate');
         Route::get('/website/faq/delete/{id}', 'Delete')->name('faqDelete');
+    });
+    Route::controller(CategoryController::class)->group(function(){
+        Route::get('/website/category/index', 'Index')->name('category.index');
+        Route::get('/website/category/create', 'Create')->name('categoryCreate');
+        Route::post('/website/category/store', 'Store')->name('categoryStore');
+        Route::get('/website/category/edit/{id}', 'Edit')->name('categoryEdit');
+        Route::post('/website/category/update/{id}', 'Update')->name('categoryUpdate');
+        Route::get('/website/category/delete/{id}', 'Delete')->name('categoryDelete');
     });
 
 });
