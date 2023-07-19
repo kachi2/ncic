@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('contents')
-
 @if(isset($breadcrums))
 <div class="page-header-area" style="background: #ddd url('{{asset('/images/'.$breadcrums->image)}}')  center">
    @else 
@@ -25,7 +24,6 @@
         </div>
     </div>
 </div>
-
 <!-- Start Page Content Wrapper -->
 <div class="page-content-wrap pt-90 pt-sm-60 pb-90 pb-sm-52 mb-xl-30">
     <div class="blog-page-area-wrapper">
@@ -36,20 +34,19 @@
                         <div class="row news-grid">
 
                             @forelse ($blogs as  $blog)
-                            <div class="col-sm-6 col-lg-4">
+                            <div class="col-sm-12 col-lg-4">
                                 <!-- Start Single News Item -->
                                 <div class="news-item">
                                     <figure class="news-item__thumb">
-                                        <a href="{{route('blog.details', encrypt($blog->id))}}"><img src="{{asset('/assets/img/news/post-01.jpg')}}" alt="Post"/></a>
+                                        <a href="{{route('blog.details', encrypt($blog->id))}}"><img src="{{asset('images/'.$blog->image)}}" alt="Post"/></a>
                                     </figure>
 
-                                    <div class="news-item__info">
+                                    <div class="news-item__info" style="text-align:justify">
                                         <h2><a href="{{route('blog.details', encrypt($blog->id))}}">{{$blog->title}}</a></h2>
                                         <div class="post-meta">
-                                            <a href="{{route('blog.details', encrypt($blog->id))}}" class="post-date"><i class="fa fa-clock-o"></i>
-                                                {{$blog->created_at->format('d/m/y')}}</a>
+                                            {{-- <a href="#" class="post-date"><i class="fa fa-clock-o"></i>{{$blog->created_at->format('d/m/y')}}</a> --}}
                                         </div>
-                                        <p style="color:#fff">{!! substr($blog->contents, 0, 200) !!}
+                                        <p style="color:#fff; ">{!! substr($blog->contents, 0, 400) !!}
                                             </p>
                                         <a href="{{route('blog.details', encrypt($blog->id))}}" class="btn btn-brand">Read More</a>
                                     </div>
@@ -65,11 +62,25 @@
 
                         </div>
 
-                     
+                        {{-- <div class="row">
+                            <div class="col-12">
+                                <!-- Start Pagination Wrap -->
+                                <div class="pagination-wrap mt-60 mt-md-40 mt-sm-40">
+                                    <ul class="pagination justify-content-center">
+                                        <li><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                                        <li><a href="#" class="current">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                                    </ul>
+                                </div>
+                                <!-- End Pagination Wrap -->
+                            </div>
+                        </div> --}}
                     </div>
                 </div>
 
-                <div class="col-lg-3">
+                {{-- <div class="col-lg-3">
                     <div class="sidebar-area mt-md-52 mt-sm-52">
                         <aside class="sidebar-wrapper">
                           
@@ -108,7 +119,7 @@
                             <!-- End Single Sidebar -->
                         </aside>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

@@ -29,6 +29,9 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
+        if(request()->user()->new_login != null){
+            request()->user()->update(['new_login' => null]);
+           }
         $request->session()->regenerate();
 
         AdminActivity::create([

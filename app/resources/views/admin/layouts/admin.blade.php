@@ -18,8 +18,7 @@
     <!-- Vmap -->
     <link rel="stylesheet" href="{{asset('/backend/vendors/vmap/jqvmap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/backend/css/app.min.css')}}" type="text/css">
-    <script src="https://cdn.ckeditor.com/4.20.2/full/ckeditor.js"></script>
-
+    <script src="https://cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>
 
 
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css" integrity="sha512-ngQ4IGzHQ3s/Hh8kMyG4FC74wzitukRMIcTOoKT3EyzFZCILOPF0twiXOQn75eDINUfKBYmzYn2AA8DkAk8veQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
@@ -37,7 +36,7 @@
                 <div class="navigation-menu-tab-header" data-toggle="tooltip" title="Admin" data-placement="right">
                     <a href="#" class="nav-link" data-toggle="dropdown" aria-expanded="false">
                         <figure class="avatar avatar-sm">
-                                 <img src="{{asset('/assets/'.$settings->logo)}}" height="10px" width="10px">
+                                 <img src="{{asset('/assets/logo.png')}}" height="10px" width="10px">
                         </figure>
                     </a>
                 </div>
@@ -55,7 +54,7 @@
               <div>
                 <ul>
                     <li>
-                        <a href="" data-toggle="tooltip" data-placement="right" title="Settings">
+                        <a href="{{route('admin.settings.index')}}" data-toggle="tooltip" data-placement="right" title="Settings">
                             <i data-feather="settings"></i>
                         </a>
                     </li>
@@ -78,8 +77,8 @@
             <div>
                 <div id="navigation-logo">
                     <a href="{{route('admin.index')}}">
-                        <img class="logo" src="{{asset('/assets/'.$settings->logo)}}" height="auto" width="120px">
-                        <img class="logo-light" src="{{asset('/assets/'.$settings->logo)}}" height="auto" width="120px" alt="light logo">
+                        <img class="logo" src="{{asset('/assets/logo.png')}}" height="auto" width="120px">
+                        <img class="logo-light" src="{{asset('/assets/logo.png')}}" height="auto" width="120px" alt="light logo">
                     </a>
                 </div>
             </div>
@@ -153,7 +152,7 @@
 <script src="{{asset('/backend/vendors/vmap/jquery.vmap.min.js')}}"></script>
 <script src="{{asset('/backend/vendors/vmap/maps/jquery.vmap.usa.js')}}"></script>
 <script src="{{asset('/backend/js/examples/vmap.js')}}"></script>
-{{-- <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script> --}}
+
 
 
 <script src="{{asset('/backend/js/examples/dashboard.js')}}"></script>

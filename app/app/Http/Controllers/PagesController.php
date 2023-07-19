@@ -90,9 +90,13 @@ class PagesController extends Controller
 
     public function BlogDetails($id){
         $id = decrypt($id);
-        return view('frontend.blog_details', [
+        $menuId = Menu::where('id', $id)->first();
+        $page['pages'] = 'Blog';
+        $page['breadcrums'] =  $menuId;
+        return view('frontend.blog_details', $page, [
             'blogs' => Blog::where('id', $id)->first(),
-            'popular' => Blog::where('views', '>', '10')->get(),
+            'popular' => Blog::latest()->take(5)->get(),
+            
         ]);
     }
 
@@ -132,8 +136,9 @@ class PagesController extends Controller
         ];
         Session::flash('message', 'Request sent Successfully');
         Session::flash('alert', 'success');
-        Mail::to('contact@otegeeconcepts.com.ng')->send(new ContactUs($data));
-        // Mail::to('noreply@greatjasmine.com.ng')->send(new ContactUs($data));
+        Mail::to(['contact@ncicworld.com'])->send(new ContactUs($data));
+
+       // dd($email);
         return back();
     }
 }

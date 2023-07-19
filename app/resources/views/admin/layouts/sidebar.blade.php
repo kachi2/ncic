@@ -55,7 +55,7 @@
                 <ul>
                       <li><a href="{{route('admin.JobsCreate')}}">Post Jobs</a></li>
                       <li><a href="{{route('admin.Jobs.index')}}">Manage Jobs</a></li>
-                      <li><a href="{{route('admin.category.index')}}">Manage Industry </a> </li>
+                      <li><a href="{{route('admin.category.index')}}">Manage Job Id </a> </li>
                 </ul>
         </li> 
         

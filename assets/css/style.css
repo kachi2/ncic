@@ -115,8 +115,6 @@ legend {
     white-space: normal;
 }
 
-
-
 /* Allow only vertical resizing of textareas. */
 textarea {
     resize: vertical;
@@ -124,7 +122,7 @@ textarea {
 
 /* Paragraph Last Child Margin Remove */
 p {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 p:last-child {
@@ -189,7 +187,7 @@ h1,
 h2,
 .h2 {
     font-size: 32px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -204,10 +202,8 @@ h3,
 .h3 {
     font-size: 30px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
-
-
 
 @media only screen and (max-width: 767.98px) {
 
@@ -243,18 +239,18 @@ ul {
     padding: 0;
 }
 
-ul li {
+/* ul li {
     list-style: none;
-}
+} */
 
 ul {
     margin: 0;
     padding: 0;
 }
 
-ul li {
+/* ul li {
     list-style: none;
-}
+} */
 
 strong,
 b {
@@ -331,8 +327,6 @@ button:focus {
         padding: 10px 20px;
     }
 }
-
-
 
 .btn:focus,
 .btn:active {
@@ -1739,8 +1733,6 @@ button:focus {
 }
 
 @media only screen and (max-width: 479.98px) {
-
-
     .info-item {
         margin-bottom: 15px;
     }
@@ -2043,6 +2035,7 @@ button:focus {
     max-width: 50%;
     margin-bottom: 0;
     margin-top: 20px;
+    list-style:none;
 }
 
 @media only screen and (max-width: 575.98px) {
@@ -2052,6 +2045,7 @@ button:focus {
         flex-basis: 100%;
         max-width: 100%;
         line-height: 1.3;
+        list-style:none;
     }
 }
 
@@ -2212,6 +2206,7 @@ button:focus {
 
 .dropdown-navbar .dropdown-nav li {
     margin-bottom: 10px;
+    list-style: none;
 }
 
 .dropdown-navbar .dropdown-nav li:last-child {
@@ -2221,10 +2216,12 @@ button:focus {
 .dropdown-navbar .dropdown-nav li a {
     color: #333333;
     font-size: 16px;
+    list-style: none;
 }
 
 .dropdown-navbar .dropdown-nav li a:hover {
     color: #FA9A00;
+    list-style: none;
 }
 
 .dropdown-navbar:hover .dropdown-nav {
@@ -2378,7 +2375,6 @@ button:focus {
 }
 
 @media only screen and (max-width: 479.98px) {
- 
     .off-canvas-wrapper .off-canvas-inner {
         width: 220px;
     }
@@ -4525,6 +4521,7 @@ Team Member Style CSS
 .service-list li {
     border-bottom: 1px solid #ddd;
     padding: 13px 0;
+    list-style:none;
 }
 
 .service-list li:first-child {
@@ -4540,6 +4537,7 @@ Team Member Style CSS
     color: #858585;
     font-weight: 600;
     vertical-align: middle;
+    list-style: none;
 }
 
 .service-list li a img,
@@ -4560,7 +4558,7 @@ Team Member Style CSS
 ===============================*/
 .project-info h2 {
     font-size: 28px;
-    margin-top: -10px;
+    margin-top: -2px;
 }
 
 @media only screen and (max-width: 767.98px) {

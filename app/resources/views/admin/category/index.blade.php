@@ -9,7 +9,7 @@
                                 <h6 class="card-title">Website</h6>
                                 <div>
                                     <a href="{{route('admin.categoryCreate')}}" class="mr-3 btn btn-primary" style="color:aliceblue">
-                                        <i class="fa fa-bars"> Create Job Industry</i>
+                                        <i class="fa fa-bars"> Create Job Id</i>
                                     </a>
                                     <div class="dropdown">
                                         <a href="#" data-toggle="dropdown" aria-haspopup="true"
@@ -51,8 +51,8 @@
                                                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a href="{{route('admin.categoryEdit', encrypt($sp->id))}}" class="dropdown-item">Edit Industry</a>
-                                                            <a href="{{route('admin.categoryDelete', encrypt($sp->id))}}" class="dropdown-item">Delete Industry</a>
+                                                            <a href="{{route('admin.categoryEdit', encrypt($sp->id))}}" class="dropdown-item">Edit Job Id</a>
+                                                            <a href="{{route('admin.categoryDelete', encrypt($sp->id))}}" class="dropdown-item">Delete Job Id</a>
                                                             </div>
                                                     </div>
                                                 </td>
