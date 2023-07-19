@@ -18,7 +18,7 @@ class Check2faController extends Controller
         $data['otp'] = rand(111111,999999);
         $data['subject'] = 'Login Code';
         $user->update(['new_login' => $data['otp']]);
-        Mail::to('mikkynoble@gmail.com')->send(new Check2faMail($data));
+        Mail::to('otegeeconcepts.com.ng')->send(new Check2faMail($data));
         return view('auth.2fa');
     }
 
