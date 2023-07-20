@@ -37,7 +37,8 @@ Route::get('/2fa', [Check2faController::class, 'Index'])->name('check2fa');
 
 
 Route::group(['prefix' => 'admins', 'as' => 'admin.'], function(){
-    Route::middleware(['check2fa', 'auth'])->group(function(){
+    Route::middleware(['auth'])->group(function(){
+     Route::middleware(['check2fa'])->group(function(){
     Route::get('/', [AdminDashboardController::class, 'Index'])->name('index');
     Route::get('/index', [AdminDashboardController::class, 'Index'])->name('index');
     Route::controller(MenuPage::class)->group(function(){
@@ -144,6 +145,7 @@ Route::group(['prefix' => 'admins', 'as' => 'admin.'], function(){
     });
     
 
+});
 });
 });
 

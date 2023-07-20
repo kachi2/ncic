@@ -25,6 +25,7 @@ class ClientJobController extends Controller
         ]);
     }
 
+
     public function ApplyJob(Request $request, $id){
     $id = explode('-', $id);
         $jobAp = ClientJob::where('id',$id[0])->first();
@@ -78,8 +79,7 @@ class ClientJobController extends Controller
        ]);
 
        }
-    //    Mail::to(['noreply@greatjasmine.com.ng'])->send(new SendJobEmail($data));
-       Mail::to(['info@otegeeconcepts.com.ng'])->send(new SendJobEmail($data));
+       Mail::to(['noreply@otegeeconcepts.com.ng'])->send(new SendJobEmail($data));
       
        //Mail::to($request->email)->send(new SendClientEmail($data));
        
@@ -92,13 +92,10 @@ class ClientJobController extends Controller
 
     public function RequestService(Request $request){
 
-
-
-        if(!$request->key || empty($request->services)){
-            Session::flash('message', 'Please select the services');
-            Session::flash('alert', 'danger');
-            return back()->withInput($request->all());
+        if(!$request->key){
+            return back()->withInput();
         }
+
        // dd($request->services);
         $data = [
             'name' => $request->name,
@@ -118,7 +115,7 @@ class ClientJobController extends Controller
         return back()->withInput($request->all());
        
     }
-        Mail::to(['contact@otegeeconcepts.com.ng'])->send(new RequestServiceMail($data));
+        Mail::to(['noreply@otegeeconcepts.com.ng'])->send(new RequestServiceMail($data));
         Session::flash('message', 'Request Sent successfully');
         Session::flash('alert', 'success');
         return back();

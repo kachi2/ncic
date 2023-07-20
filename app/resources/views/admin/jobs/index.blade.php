@@ -52,7 +52,7 @@
                     <div class="card-body">
                         <div class="small mb-2"></div>
                         <div class="avatar-group">
-                            <div>₦{{$job->salary_range}}</div>
+                            <div>{{$job->salary_range}}</div>
                          
                         </div> &nbsp; &nbsp; 
                         <span class=""><i class="fa fa-eye"> </i> {{$job->views > 0? $job->views :'0'}}</span> 
@@ -70,6 +70,7 @@
 
   
 @endsection
+
 @section('script')
 <script>
 
