@@ -35,15 +35,15 @@
     <h5> 6 Digits code was sent to your email, please verify to login <i class="fa fa-lock"> </i></h5>
 
     <!-- form -->
-  <form class="login100-form validate-form" action="{{route('login')}}" method="POST">
+  <form class="login100-form validate-form" action="{{route('VerifyCodes')}}" method="POST">
                                          @csrf
         <div class="form-group">
             <input type="text" value="{{old('code')}}" class="form-control @error('code') is-invalid @enderror" name="code" placeholder="code" required autofocus>
-         @error('code')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
+      @if(Session::has('message')) 
+            <span class="" role="alert">
+                <strong class="badge badge-warning">{{Session::get('message')}}  </strong>
             </span>
-        @enderror
+          @endif
         </div>
        
         <button class="btn btn-primary btn-block">Verify and Login</button>

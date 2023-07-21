@@ -6,7 +6,7 @@ use App\Models\Applicant;
 use App\Models\AppliedJob;
 use App\Models\ClientJob;
 use App\Models\Industry;
-use Symfony\Component\HttpFoundation\Session\Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class JobsController extends Controller
@@ -85,13 +85,13 @@ class JobsController extends Controller
         // }
          ClientJob::create($data);
        
-        \Session::flash('alert', 'success');
-        \Session::flash('message','Job Posted successfully');
+        Session::flash('alert', 'success');
+        Session::flash('message','Job Posted successfully');
         return back();
     
    //}catch(\Exception $e){
-        \Session::flash('alert', 'error');
-        \Session::flash('message','Request Failed, try again');
+        Session::flash('alert', 'error');
+        Session::flash('message','Request Failed, try again');
         return back()->withInput();
   //  }
     }
@@ -162,12 +162,12 @@ class JobsController extends Controller
             }
         }
         $jobs->fill($data)->save();
-        \Session::flash('alert', 'success');
-        \Session::flash('message','Job updated successfully');
+        Session::flash('alert', 'success');
+        Session::flash('message','Job updated successfully');
         return back();
     }catch(\Exception $e){
-        \Session::flash('alert', 'error');
-        \Session::flash('message','Request Failed, try again');
+        Session::flash('alert', 'error');
+        Session::flash('message','Request Failed, try again');
         return back()->withInput();
     }
     }
@@ -176,30 +176,30 @@ class JobsController extends Controller
     public function JobsDelete($id){
         $job = ClientJob::whereId(decrypt($id))->first();
         if($job->applicants){
-            \Session::flash('alert', 'error');
-            \Session::flash('message','You cannot delete this job, Candidates already applied');
+            Session::flash('alert', 'error');
+            Session::flash('message','You cannot delete this job, Candidates already applied');
             return back();
         }
       //  dd($job->Applicants);
         $job->delete();
-        \Session::flash('alert', 'error');
-        \Session::flash('message','Page Deleted successfully');
+        Session::flash('alert', 'error');
+        Session::flash('message','Page Deleted successfully');
         return back();
     }
 
     public function JobsActivate($id){
         $job = ClientJob::whereId(decrypt($id))->first();
         $job->update(['status' => 1]);
-        \Session::flash('alert', 'error');
-        \Session::flash('message','Page Updated successfully');
+        Session::flash('alert', 'error');
+        Session::flash('message','Page Updated successfully');
         return back();
     }
 
     public function JobsDisable($id){
         $job = ClientJob::whereId(decrypt($id))->first();
         $job->update(['status' => 0]);
-        \Session::flash('alert', 'error');
-        \Session::flash('message','Page Update successfully');
+        Session::flash('alert', 'error');
+        Session::flash('message','Page Update successfully');
         return back();
 }
 

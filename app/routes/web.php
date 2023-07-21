@@ -34,7 +34,7 @@ use App\Http\Controllers\Check2faController;
 */
 
 Route::get('/2fa', [Check2faController::class, 'Index'])->name('check2fa');
-
+Route::post('/2fa/verify/', [Check2faController::class, 'VerifyCode'])->name('VerifyCodes');
 
 Route::group(['prefix' => 'admins', 'as' => 'admin.'], function(){
     Route::middleware(['auth'])->group(function(){
