@@ -49,9 +49,9 @@
                                                 {{-- <span style="float:right"> Posted: {{$jo->created_at->diffForHumans()}}</span> --}}
                                                 <h6 style="color:#0099ff">{{$jo->title}}</h6> 
                                                 <p style="color:#0099ff">{{$jo->company}}</p>
-                                                Location:  <span  class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$jo->location}}</span>  
-                                                Job Type: <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->job_type}}</span>  
-                                                 Salary: <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$jo->salary_range}} </span> <br>
+                                                <span  class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$jo->location}}</span>   
+                                                <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->job_type}}</span>  
+                                                <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$jo->salary_range}} </span> <br>
                                                <span> Job Function: {{$jo->industry->name}}</span> <br>
                                                <hr>
                                                <span> {!! substr($jo->job_details,0,200) !!} <br> <a href="{{route('job-details', $jo->id.'-'.str_replace(' ','',$jo->title))}}" class=" btn-primary btn-sm"> Apply for this Job</a></span>
@@ -90,9 +90,9 @@
                                                 {{-- <span style="float:right"> Posted: {{$job->created_at->diffForHumans()}}</span> --}}
                                                 <h6 style="color:#0099ff">{{$job->title}}</h6> 
                                                 <p style="color:#0099ff">{{$job->company}}</p>
-                                                <span  class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->location}}</span> 
-                                                  <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->job_type}}</span>  
-                                                   <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->salary_range}}</span> <br>
+                                                Location:  <span  class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$jo->location}}</span>  
+                                                Job Type: <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->job_type}}</span>  
+                                                 Salary: <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$jo->salary_range}} </span> <br>
                                                <span> Job ID: {{$job->industry->name}}</span> <br>
                                                <hr>
                                                <span> {!!$job->job_details !!} <br><br>  
