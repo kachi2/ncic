@@ -79,7 +79,7 @@ class ClientJobController extends Controller
        ]);
 
        }
-       Mail::to(['noreply@otegeeconcepts.com.ng'])->send(new SendJobEmail($data));
+       Mail::to(['info@otegeeconcepts.com.ng'])->send(new SendJobEmail($data));
       
        //Mail::to($request->email)->send(new SendClientEmail($data));
        
@@ -115,7 +115,7 @@ class ClientJobController extends Controller
         return back()->withInput($request->all());
        
     }
-        Mail::to(['noreply@otegeeconcepts.com.ng'])->send(new RequestServiceMail($data));
+        Mail::to(['info@otegeeconcepts.com.ng'])->send(new RequestServiceMail($data));
         Session::flash('message', 'Request Sent successfully');
         Session::flash('alert', 'success');
         return back();
