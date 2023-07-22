@@ -96,6 +96,11 @@ class ClientJobController extends Controller
             return back()->withInput();
         }
 
+        if(empty($request->service)){
+            $service = [];
+           }else{
+            $service = $request->service;
+           }
        // dd($request->services);
         $data = [
             'name' => $request->name,
@@ -105,7 +110,7 @@ class ClientJobController extends Controller
             'city' => $request->city,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
-            'services' => $request->services
+            'services' => $service
         ];
 
     $capt = captcha_check($request->captcha);
