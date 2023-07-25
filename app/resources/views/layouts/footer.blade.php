@@ -115,9 +115,9 @@
                     </div>
 
                     <div class="copyright-text">
-                        <p> &copy; Copyright
+                        <p> &copy; Copyrights
                             <script>
-                               document.write(new Date().getFullYear())
+                              // document.write(new Date().getFullYear())
                            </script>
                           {{$settings->site_copyright}}
                        </p>
