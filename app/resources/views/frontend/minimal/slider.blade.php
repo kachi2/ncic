@@ -38,6 +38,7 @@
                          <span style="color:{{$slider->color}}; text-shadow: -1px -1px 0 {{$slider->bg_color}}, 1px -1px 0 {{$slider->bg_color}}, -1px 1px 0 {{$slider->bg_color}}, 1px 1px 0 {{$slider->bg_color}};" > {!! $slider->title !!} </span></h1>
  
                      <!-- LAYER NR. 4 -->
+                     @if($slider->content  != null )
                      <div  class="  tp-caption  tp-resizeme" id="slide-1-layer-4" data-x="['{{$slider->align}}','{{$slider->align}}','{{$slider->align}}','{{$slider->align}}']"
                           data-hoffset="['10','50','10','15']" data-y="['middle','middle','middle','middle']"
                           data-voffset="['61','61','31','14']" data-width="100%" data-height="none"
@@ -47,11 +48,16 @@
                           data-paddingright="[5,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[5,0,0,0]">
                         <span style=" color:{{$slider->color}}; font-size:24px;  text-shadow: -1px -1px 0 #424141, 1px -1px 0 #3a3939, -1px 1px 0 #464545, 1px 1px 0 #3b3939;" > {!! $slider->content !!}</span> 
                      </div>
+                     @endif
  
                      <!-- LAYER NR. 5 -->
                      <div class="tp-caption bttn-primary-bg rev-btn  tp-resizeme  transit-md" id="slide-{{$x}}-layer-{{$y+6}} "
                           data-x="['{{$slider->align}}','center','{{$slider->align}}','{{$slider->align}}']" data-hoffset="['11','-378','11','16']"
+                          @if($slider->content  != null )
                           data-y="['top','top','middle','middle']" data-voffset="['392','391','89','75']"
+                          @else 
+                          data-y="['top','top','middle','middle']" data-voffset="['332','391','89','75']" 
+                          @endif 
                           data-fontsize="['15','16','16','16']" data-fontweight="['700','600','600','600']"
                           data-width="none" data-height="none" data-whitespace="nowrap" data-type="button"
                           data-responsive_offset="on"
