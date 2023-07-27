@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="copyright-text">
-                        <p> &copy; Copyright
+                        <p> &copy; Copyrights
                              <script>
                                 //document.write(new Date().getFullYear())
                             </script>
