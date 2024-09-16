@@ -253,10 +253,10 @@
                                         <li> 1. Click the empty lines and enter required information </li>
                                         <li> 2. Click on Upload Signature</li>
                                         <li> 3. Sign Signature on a white paper, snap and upload </li>
-                                        <li> 3. Upload Personal Statment </li>
-                                        <li> 3. Upload your Resume </li>
-                                        <li> 4. Click submit Form button to submit</li>
-                                        <li> 5. Close window</li>
+                                        <li> 4. Upload Personal Statment </li>
+                                        <li> 5. Upload your Resume </li>
+                                        <li> 6. Click submit Form button to submit</li>
+                                        <li> 7. Close window</li>
 
 
                                     </ul>
