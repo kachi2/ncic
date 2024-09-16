@@ -59,12 +59,20 @@ class FormCreationEmail extends Mailable
     public function attachments()
     {
         return [
-            Attachment::fromData(fn () => $this->data['resume'], 'resume.pdf')
-                    ->withMime('application/pdf'),
-         Attachment::fromData(fn () => $this->data['document'], 'consentForm.pdf')
-                    ->withMime('application/pdf'),
-         Attachment::fromData(fn () => $this->data['personal_statement'], 'personal_statement.pdf')
-                    ->withMime('application/pdf'),
+        //     Attachment::fromData(fn () => $this->data['resume'], 'resume.pdf')
+        //             ->withMime('application/pdf'),
+        //  Attachment::fromData(fn () => $this->data['document'], 'consentForm.pdf')
+        //             ->withMime('application/pdf'),
+        //  Attachment::fromData(fn () => $this->data['personal_statement'], 'personal_statement.pdf')
+        //             ->withMime('application/pdf'),
+
+        // Attachment::fromPath(public_path('images/'.$this->data['resume']))
+        // ->as('resume.pdf'),
+        // Attachment::fromPath(public_path('images/'.$this?->data['document']))
+        // ->as('consentForm.pdf'),
+        // Attachment::fromPath(public_path('images/'.$this->data['personal_statement']))
+        // ->as('personal_statement.pdf'),
+        // ];
         ];
     }
 }

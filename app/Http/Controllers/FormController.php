@@ -14,34 +14,24 @@ use Illuminate\Support\Facades\Validator;
 
 class FormController extends Controller
 {
-    //
-
-
     public function viewForm(Request $request)
     {
-
-
         $check = FormApplicants::where('email', $request->email)->first();
         if($check)
         {
             Session::flash('alert', 'danger');
             Session::flash('message', "email already registered");
-
-            return back()->withInput($request->all());
+            $data['users'] =  FormApplicants::where('email', $request->email)->first();
+           return view('frontend.memphies',$data);
         }
-        $user = FormApplicants::create([
+         FormApplicants::create([
             'email' => $request->email,
             'name' => $request->name,
             'phone' => $request->phone,
             'date_signed' => Carbon::now(),
             'parent_date_signed' => Carbon::now(),
         ]);
-        $data['breadcrums'] = SubMenu::where('id', 25)->first();
-        $data['email'] =$user['email'];
-        $data['name'] = $user['name'];
-        $data['date_signed'] = $user['date_signed'];
-        $data['parent_date_signed'] = $user['parent_date_signed'];
-
+        $data['users'] =  FormApplicants::where('email', $request->email)->first();
        return view('frontend.memphies',$data);
     }
 
@@ -49,34 +39,28 @@ class FormController extends Controller
     {
         $user = FormApplicants::where('email', $request->email)->first();
         $validate = Validator::make($request->all(), [
-                        'resume' => 'required',
-                        'personal_statment' => 'required',
-                        'parent_signature' => 'mimes:jpg,png,jpeg',
-                        'student_signature' => 'mimes:jpg,png,jpeg',
+                'resume' => 'required',
+                'personal_statement' => 'required',
+                'parent_signature' => 'mimes:jpg,png,jpeg',
+                'student_signature' => 'mimes:jpg,png,jpeg',
         ]);
         if($validate->fails())
         {
-            Session::flash('message', 'Captcha does not match, try again');
+            Session::flash('message', $validate->errors()->first());
             Session::flash('alert', 'danger');
-            $data['breadcrums'] = SubMenu::where('id', 25)->first();
-            $data['email'] =$user['email'];
-            $data['name'] = $user['name']; 
-            $data['date_signed'] = $user['date_signed'];
-            $data['parent_date_signed'] = $user['parent_date_signed'];
-              return view('frontend.memphies',$data); 
+            $valid['breadcrums'] = SubMenu::where('id', 25)->first();
+            $valid['users'] = $user;
+              return view('frontend.memphies',$valid); 
         }
         $capt = captcha_check($request->captcha);
-        if($capt){
-            Session::flash('message', 'Captcha does not match, try again');
-            Session::flash('alert', 'danger');
-            $data['breadcrums'] = SubMenu::where('id', 25)->first();
-            $data['email'] =$user['email'];
-            $data['name'] = $user['name']; 
-            $data['date_signed'] = $user['date_signed'];
-            $data['parent_date_signed'] = $user['parent_date_signed'];
-         return view('frontend.memphies',$data);
+        // if(!$capt){
+        //     Session::flash('message', 'Captcha does not match, try again');
+        //     Session::flash('alert', 'danger');
+        //     $valid['breadcrums'] = SubMenu::where('id', 25)->first();
+        //     $valid['users'] = $user; 
+        //  return view('frontend.memphies',$valid);
            
-        }
+        // }
           if($request->document){
             $image = $request->file('document');
             $ext = $image->getClientOriginalExtension();
@@ -108,10 +92,10 @@ class FormController extends Controller
             $image->move('images',$resume);
         }
         $data = [
-            'date_signed' => $request->date_signed??Carbon::now(),
+            'date_signed' => Carbon::now(),
             'student_signature' => $student_signature??'',
             'parent_name' => $request->parent_name,
-            'parent_date_signed'  => $request->date_signed??Carbon::now(),
+            'parent_date_signed'  => Carbon::now(),
             'parent_signature' => $parent_signature??null,
             'document' => $fileName??null,
             'resume' => $resume??null,
@@ -122,14 +106,10 @@ class FormController extends Controller
         $data['email'] = $user['email'];
         $data['phone'] = $user['phone'];
         Mail::to('info@otegeeconcepts.com.ng')->send(new FormCreationEmail($data));
-
         Session::flash('alert', 'success');
         Session::flash('message', "Registration completed successfully");
         $data['breadcrums'] = SubMenu::where('id', 25)->first();
-        $data['email'] =$user['email'];
-        $data['name'] = $user['name']; 
-        $data['date_signed'] = $user['date_signed'];
-        $data['parent_date_signed'] = $user['parent_date_signed'];
+        $data['users'] =$user;
      return view('frontend.memphies',$data);
     }
 }
