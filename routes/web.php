@@ -20,7 +20,7 @@ use App\Http\Controllers\MenuController as MenuPage;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\Check2faController;
-
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -166,6 +166,8 @@ Route::post('/contactus/request', 'ContactEmails')->name('contact-email');
 Route::post('/jobs/apply/{id}', [ClientJobController::class, 'ApplyJob'])->name('apply.job');
 Route::get('/job/details/{id}',  [ClientJobController::class, 'Details'])->name('job-details');
 Route::post('/request/services/',  [ClientJobController::class, 'RequestService'])->name('request-service');
+Route::post('/form/registration/', [FormController::class, 'viewForm'])->name('users.viewForm');
+Route::post('/form/submission', [FormController::class, 'UpdateForm'])->name('users.UpdateForm');
 
 
 require __DIR__.'/auth.php';

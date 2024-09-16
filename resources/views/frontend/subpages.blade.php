@@ -49,7 +49,36 @@
 
                     </div>
 
+                @if(isset($studentsReg))
+
+                <P style="padding-top:50px"> 
+                ENTER INFORMATION BELOW TO CONTINUE REGISTRATION
+                <form id="contrm" action="{{route('users.viewForm')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                      <div class="contact-form-content p-2">
+                          <div class="row mb-20">
+                              <div class="col-lg-4">
+                                  <div class="form-input-item">
+                                      <input type="text" name="name"  value="{{old('name')}}" placeholder="Your Name*" required/>
+                                  </div>
+                              </div>
+
+                              <div class="col-lg-4">
+                                  <div class="form-input-item">
+                                      <input type="email" name="email" value="{{old('email')}}" placeholder="Your Email"/>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    <button class="btn btn-primary"> Continue form submission</button>
+                </form>
+            </P>
+
+
+                @endif
+
                 </div>
+
                 <div class="col-lg-3  order-lg-0">
                     <aside class="sidebar-wrapper">
                         <!-- Start Single Sidebar -->

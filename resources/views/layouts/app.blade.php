@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title> {{$settings->site_name}}</title>
-
+    @yield('style')
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{asset('/images/fav.png')}}" type="image/x-icon"/>
 
@@ -40,6 +40,8 @@
    @include('layouts.header')
     @yield('contents')
 
+
+    @yield('scripts')
 <!--== Start Footer Area Wrapper ==-->
 @include('layouts.footer')
 <!-- End Off Canvas Menu Wrapper -->

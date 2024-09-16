@@ -19,7 +19,7 @@ class PagesController extends Controller
     public function Pages($id){
         $id = decrypt($id);
         $menuId = Menu::where('id', $id)->first();
-        //dd( $menuId);
+        //  dd( $menuId);
         if($menuId->slug == 'Blog'){
 
             return view('frontend.blogs', 
@@ -76,15 +76,19 @@ class PagesController extends Controller
 
 
     public function Subpages($id){
-        $id = decrypt($id);
-        $id = SubMenu::where('id', $id)->first();
-        $pages = Page::where('sub_menu_id', $id->id)->first();
+        $ids = decrypt($id);
+        $sub = SubMenu::where('id', $ids)->first();
+        $pages = Page::where('sub_menu_id', $sub->id)->first();
+        if($ids == '25')
+        {
+            $pages['studentsReg'] = $pages;
+        }
         if(!$pages){
             return back();
         }
         $pages['pages'] = $pages;
-        $pages['breadcrums'] =  $id;
-        $pages['sidebar'] = SubMenu::where(['is_active' =>1, 'menu_id' =>$id->menu_id])->get();
+        $pages['breadcrums'] =  $sub;
+        $pages['sidebar'] = SubMenu::where(['is_active' =>1, 'menu_id' =>$sub->menu_id])->get();
         return view('frontend.subpages', $pages);
     } 
 
