@@ -23,7 +23,7 @@
                                 <div class="col-md-12">
                                 
 
-                                    <div class="row" style="width:900px; margin:0px auto" >
+                                    <div class="row" style="width:900px; margin:0px auto" id="pdfContent" >
                                         <div class="col-lg-9 order-0" style="margin:0px auto; width:700px; border:1px solid #8686867e; padding:30px">
                         
                                             <p style="text-align:center">
@@ -126,7 +126,7 @@
                         
                                             <p style="padding:20px 0px">
                         
-                                                <button class="btn btn-primary w-50"> Download Form</button>
+                                                <button class="btn btn-primary w-50" id="downloadBtn" type="button"> Download Form</button>
                                             </p>
                                         </div>
                                         
@@ -144,6 +144,9 @@
 @endsection
 
 @section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
 
 
@@ -174,5 +177,76 @@ toastr.success(message);
 }else if(message != null && msg == 'error'){
     toastr.error(message);
 }
+</script>
+
+
+<script>
+let name = {!! json_encode($form->name) !!}
+console.log(name)
+    window.jsPDF = window.jspdf.jsPDF;
+    window.html2canvas = html2canvas;
+    let downloadBtn = document.getElementById('downloadBtn');
+    downloadBtn.addEventListener("click", createPdf);
+
+    let printBtn = document.getElementById('printBtn');
+    printBtn.addEventListener("click", printPage);
+
+    function createPdf() {
+        html2canvas(document.getElementById('pdfContent')).then(canvas => {
+            let source = $('#pdfContent')[0];
+            const doc = new jsPDF({
+                unit: "pt",
+                orientation: 'portrait'
+            });
+
+            let margins = {
+                top: 50,
+                bottom: 50,
+                left: 50,
+                width: 500
+            }
+
+            let specialElementHandlers = {
+                '#hasCharr': function(element, renderer) {
+                    return true;
+                }
+            };
+
+            doc.setFont('Poppins-Bold', 'bold');
+            doc.html(source, {
+                x: margins.left,
+                y: margins.top,
+                width: margins.width,
+                windowWidth: 900,
+                elementHandlers: specialElementHandlers,
+                callback: function() {
+                    doc.save(name+".pdf", margins)
+                }
+            });
+        });
+    }
+
+    function printPage() {
+        window.print();
+        // setTimeout(() => {
+        //     window.close();
+        // }, 10000);
+    }
+
+
+    // $('div[data-id=imageView1]').on('click', () => {
+    //     $('#imageView1').modal('show');
+    // });
+
+    // $('div[data-id=imageView2]').on('click', () => {
+    //     $('#imageView2').modal('show');
+    // });
+
+    // $('body').on('click', () => {
+    //     $('#imageView1').modal('hide');
+    // });
+    // $('body').on('click', () => {
+    //     $('#imageView2').modal('hide');
+    // });
 </script>
 @endsection
