@@ -47,13 +47,13 @@
                                                     <a href="#">{{$sp->email}}</a>
                                                 </td>  
                                                 <td>
-                                                    <a href="{{asset('images/'.$sp->document)}}" download="">{{$sp->document}}</a>
+                                                    <a href="{{asset('images/'.$sp->document)}}" download="">Download {{$sp->document}}</a>
                                                 </td>  
                                                 <td>
-                                                    <a href="{{asset('images/'.$sp->personal_statment)}}" download="">{{$sp->personal_statment}}</a>
+                                                    <a href="{{asset('images/'.$sp->personal_statement)}}" download="">Download {{$sp->personal_statement}}</a>
                                                 </td>  
                                                 <td>
-                                                    <a href="{{asset('images/'.$sp->resume)}}" download="">{{$sp->resume}}</a>
+                                                    <a href="{{asset('images/'.$sp->resume)}}" download="">Download {{$sp->resume}}</a>
                                                 </td> 
                                                   <td>
                                                     <a href="#">{{$sp->created_at}}</a>
