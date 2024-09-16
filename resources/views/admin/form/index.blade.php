@@ -28,6 +28,8 @@
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Document</th>
+                                                <th>Personal Statement</th>
+                                                <th>Resume</th>
                                                  <th>Created At</th>
                                                 <th>Action</th>
                                             </tr>
@@ -45,8 +47,14 @@
                                                     <a href="#">{{$sp->email}}</a>
                                                 </td>  
                                                 <td>
-                                                    <a href="#">{{$sp->document}}</a>
+                                                    <a href="{{asset('images/'.$sp->document)}}" download="">{{$sp->document}}</a>
                                                 </td>  
+                                                <td>
+                                                    <a href="{{asset('images/'.$sp->personal_statment)}}" download="">{{$sp->personal_statment}}</a>
+                                                </td>  
+                                                <td>
+                                                    <a href="{{asset('images/'.$sp->resume)}}" download="">{{$sp->resume}}</a>
+                                                </td> 
                                                   <td>
                                                     <a href="#">{{$sp->created_at}}</a>
                                                 </td>

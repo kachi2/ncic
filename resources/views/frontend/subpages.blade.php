@@ -72,15 +72,17 @@
                                       <input type="email" name="email" value="{{old('email')}}" placeholder="Your Email"/>
                                   </div>
                               </div>
+                              <div class="col-lg-4">
+                                <div class="form-input-item">
+                                    <input type="text" name="phone" value="{{old('phone')}}" placeholder="Your Phone"/>
+                                </div>
+                            </div>
                             </div>
                         </div>
                     <button class="btn btn-primary"> Continue form submission</button>
                 </form>
             </P>
-
-
                 @endif
-
                 </div>
 
                 <div class="col-lg-3  order-lg-0">

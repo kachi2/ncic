@@ -9,5 +9,5 @@ class FormApplicants extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','email','date_signed','student_signature','parent_name','parent_date_signed','parent_signature','document'];
+    protected $fillable = ['name','email','phone','date_signed','student_signature','parent_name','parent_date_signed','parent_signature','document', 'resume','personal_statement','document'];
 }

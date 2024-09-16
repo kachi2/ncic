@@ -49,12 +49,13 @@ label
     </div>
 </div>
 {{-- {{dd($email)}} --}}
+@if(Session::has('message'))
+<span class="alert alert-{{Session::get('alert')}}"> {{Session::get('message')}}</span>
+@endif
 <div class="page-content-wrap pt-90 pt-sm-60 pb-90 pb-sm-60 mb-xl-30">
     <div class="service-details-page-wrap">
         <div class="container">
-            @if(Session::has('message'))
-            <span class="alert alert-{{Session::get('alert')}}"> {{Session::get('message')}}</span>
-            @endif
+           
             <form  action="{{route('users.UpdateForm')}}" method="post" enctype="multipart/form-data">
                 @csrf
             <div class="row">
@@ -122,7 +123,7 @@ application to enroll as a  <span style="font-style: italic"> UNIVERSITY </span>
                         Prospective Student Signature: <label for="signature"  style="background-color: #608ef275; color:#000; padding:2px">  Upload Signature </label>
                          <input type="file" id="signature" name="student_signature">  <span id="signature-lable" style="color:red"></span>  <br>
                         Prospective Student Name (print):<input style="border:none; border-bottom:1px solid #000; width:350px;  padding-left:10px" value="{{strtoupper($name)}}"><br>
-                        Date:<input style="border:none; border-bottom:1px solid #000; width:350px" name="date_signed" placeholder="dd-mm-yy"><br>
+                        Date:<input style="border:none; border-bottom:1px solid #000; width:350px" name="date_signed" placeholder="dd-mm-yy" value="{{$date_signed}}"><br>
                     </p>
                     <p style="padding-top:10px">
                         <span style="font-weight: bold">  If Prospective Student is under 18 years of age: </span>
@@ -137,7 +138,7 @@ application to enroll as a  <span style="font-style: italic"> UNIVERSITY </span>
                         Parent or Guardian Signature:<label for="signatures"  style="background-color: #608ef275; color:#000; padding:2px">  Upload Signature </label>
                          <input type="file" id="signatures" name="parent_signature">  <span id="signature-lables" style="color:red"></span> <br>
                         Parent or Guardian Name (print):<input style="border:none; border-bottom:1px solid #000; width:350px" name="parent_name"><br>
-                        Date:<input style="border:none; border-bottom:1px solid #000; width:350px"><br>
+                        Date:<input style="border:none; border-bottom:1px solid #000; width:350px" value="{{$parent_date_signed}}"><br>
                     </p>
                 </div>
                
@@ -166,10 +167,24 @@ application to enroll as a  <span style="font-style: italic"> UNIVERSITY </span>
 
                     </div> --}}
                     <p style="padding-top:20px">
-                      
-                        <label for="file" style="background-color: #5cb85c;" >  Used Offline Form? Click here to upload </label>
+                        Did you used Offline Consent Form?
+                        <label for="file" style="background-color: #5cb85c;" > Cick here to upload Form  </label>
                         <input type="file" id="file" name="document">
                         <span id="file-name" style="color:red"></span>
+                    </p>
+
+                    <p style="padding-top:20px">
+                      
+                        <label for="Resume" style="background-color: #8c580f;" >  Upload Your Resume </label>
+                        <input type="file" id="Resume" name="resume">
+                        <span id="Resume-file" style="color:red"></span>
+                    </p>
+
+                    <p style="padding-top:20px">
+                      
+                        <label for="Statement" style="background-color: #1e2e98;" > Upload  Personal Statement </label>
+                        <input type="file" id="Statement" name="personal_statment">
+                        <span id="Statement-file" style="color:red"></span>
                     </p>
 
 
@@ -194,6 +209,8 @@ application to enroll as a  <span style="font-style: italic"> UNIVERSITY </span>
                                   <li> 1. Click the  empty lines and enter required information </li> 
                                   <li>  2. Click on Upload Signature</li> 
                                   <li>  3. Sign Signature on a white paper, snap and upload </li> 
+                                  <li>  3. Upload Personal Statment </li> 
+                                  <li>  3. Upload your Resume </li> 
                                   <li> 4. Click submit Form button to submit</li> 
                                   <li> 5. Close window</li> 
 
@@ -202,7 +219,7 @@ application to enroll as a  <span style="font-style: italic"> UNIVERSITY </span>
                             </div>
                         </div>
                         <p style="color:#072490; font-size:23px; font-weight:bolder"> YOU PREFER THE FILL THE FORM OFFLINE?</p>
-                        <a href="{{asset('/assets/Otegee-Company-Profile.pdf')}}" target="_blank" class="btn btn-primary">CLICK HERE TO DOWNLOAD</a>
+                        <a href="{{asset('/images/ConsentForm.pdf')}}" target="_blank" class="btn btn-primary">CLICK HERE TO DOWNLOAD</a>
                            
                     </aside>
                     
@@ -242,7 +259,6 @@ application to enroll as a  <span style="font-style: italic"> UNIVERSITY </span>
         fileNameDisplasy.textContent = fileNames;
     });
 </script>
-
 <script>
     const signatrs = document.getElementById('signatures');
     const fileNameDisplasys = document.getElementById('signature-lables');
@@ -251,6 +267,27 @@ application to enroll as a  <span style="font-style: italic"> UNIVERSITY </span>
     signatrs.addEventListener('change', function() {
         const filesNames = this.files[0] ? this.files[0].name : '';
         fileNameDisplasys.textContent = filesNames;
+    });
+</script>
+
+<script>
+    const Resume = document.getElementById('Resume');
+    const fileNameDisplasyResume = document.getElementById('Resume-file');
+
+    // Display the chosen file name
+    Resume.addEventListener('change', function() {
+        const Resumes = this.files[0] ? this.files[0].name : '';
+        fileNameDisplasyResume.textContent = Resumes;
+    });
+</script>
+<script>
+    const personal_statment = document.getElementById('personal_statment');
+    const personal_statmentsss = document.getElementById('Statement-file');
+
+    // Display the chosen file name
+    personal_statment.addEventListener('change', function() {
+        const personal_statments = this.files[0] ? this.files[0].name : '';
+        personal_statmentsss.textContent = personal_statments;
     });
 </script>
 

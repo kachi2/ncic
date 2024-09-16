@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('contents')
 @if(!isset($breadcrums))
-<div class="page-header-area" style="background: #ddd url('{{asset('/images', $breadcrums->image)}}') no-repeat center">
+<div class="page-header-area" style="background: #ddd url('{{asset('/images', $breadcrums?->image)}}') no-repeat center">
    @else 
    <div class="page-header-area" style="background: #ddd url('{{asset('/images')}}') no-repeat center">
    @endif
@@ -48,7 +48,7 @@
                                         <div class="recent-news-item__info">
                                             <h3><a href="{{route('blog.details', encrypt($post->id))}}">{{$post->title}}</a></h3>
                                             <div class="news-meta">
-                                                {{-- <span class="post-date"><i class="fa fa-clock-o"></i>{{$post->created_at->format('d/m/y')}}</span> --}}
+                                                <span class="post-date"><i class="fa fa-clock-o"></i>{{$post->created_at->format('d/m/y')}}</span>
                                             </div>
                                         </div>
                                     </div>

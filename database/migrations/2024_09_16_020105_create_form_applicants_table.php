@@ -17,11 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable(); 
             $table->string('email')->nullable();
+            $table->string('phone')->nullable();
             $table->string('date_signed')->nullable();
             $table->string('student_signature')->nullable();
             $table->string('parent_name')->nullable();
             $table->string('parent_date_signed')->nullable();
             $table->string('parent_signature')->nullable();
+            $table->string('resume')->nullable();
+            $table->string('personal_statement')->nullable();
             $table->string('document')->nullable();
             $table->timestamps();
         });
