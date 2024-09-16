@@ -23,7 +23,10 @@
                         <!-- End Section Title -->
 
                         <!-- Start Service Slider Arrows -->
-                        
+                        <div class="ht-slick-arrows">
+                            <button id="service-prev"><i class="fa fa-angle-left"></i></button>
+                            <button id="service-next"><i class="fa fa-angle-right"></i></button>
+                        </div>
                         <!-- End Service Slider Arrows -->
                     </div>
 
@@ -31,8 +34,7 @@
                     <div class="service-content-inner">
                         <div class="ht-slick-wrapper">
                             <div class="ht-slick-slider slick-row-30"
-                                data-slick='{"slidesToShow": 3, "prevArrow":"#service-prev", "nextArrow":"#service-next", "responsive":[{"breakpoint": 992,"settings":{"slidesToShow": 1}}]}'>
-                                <!-- Start Single Service Item -->
+                                data-slick='{"slidesToShow": 4, "prevArrow":"#service-prev", "nextArrow":"#service-next", "responsive":[{"breakpoint": 992,"settings":{"slidesToShow": 1}}]}'>
                                 
                                 @forelse ($services as $ss )
                                     

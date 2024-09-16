@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminFormController;
 use App\Http\Controllers\ClientJobController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TestimonialController;
@@ -143,6 +144,10 @@ Route::group(['prefix' => 'admins', 'as' => 'admin.'], function(){
         Route::post('/website/category/update/{id}', 'Update')->name('categoryUpdate');
         Route::get('/website/category/delete/{id}', 'Delete')->name('categoryDelete');
     });
+
+    Route::get('/school/applicants', [AdminFormController::class, 'Index'])->name('form.index');
+    Route::get('/school/applicants/details/{email}', [AdminFormController::class, 'viewDetails'])->name('form.viewDetails');
+    
     
 
 });

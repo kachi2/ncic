@@ -58,9 +58,12 @@
                         <div class="small mb-2"></div>
                         <div class="avatar-group">
                             <figure class="avatar avatar-sm">
-                                <img src="{{asset('images/'.$page->metas)}}" >
+                                <img src="{{asset('images/'.$page->metas)}}" > 
                             </figure>
                            
+                        </div>
+                        <div style="float: right;">
+                            @if($page->id == 33)   <a href="{{route('admin.form.index')}}"> View School Applications</a> @endif
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FormApplicants;
 use App\Models\SubMenu;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -18,13 +19,13 @@ class FormController extends Controller
 
 
         $check = FormApplicants::where('email', $request->email)->first();
-        // if(!$check)
-        // {
-        //     Session::flash('alert', 'error');
-        //     Session::flash('message', "email already registered");
+        if($check)
+        {
+            Session::flash('alert', 'danger');
+            Session::flash('message', "email already registered");
 
-        //     return back()->withInput($request->all());
-        // }
+            return back()->withInput($request->all());
+        }
         $user = FormApplicants::create([
             'email' => $request->email,
             'name' => $request->name
@@ -38,13 +39,17 @@ class FormController extends Controller
 
     public function UpdateForm(Request $request)
     {
+        $user = FormApplicants::where('email', $request->email)->first();
         $capt = captcha_check($request->captcha);
-        // if(!$capt){
-        //     Session::flash('message', 'Captcha does not match, try again');
-        //     Session::flash('alert', 'danger');
-        //     return back()->withInput($request->all());
+        if($capt){
+            Session::flash('message', 'Captcha does not match, try again');
+            Session::flash('alert', 'danger');
+            $data['breadcrums'] = SubMenu::where('id', 25)->first();
+            $data['email'] =$user['email'];
+            $data['name'] = $user['name']; 
+         return view('frontend.memphies',$data);
            
-        // }
+        }
         $user = FormApplicants::where('email', $request->email)->first();
           if($request->document){
             $image = $request->file('document');
@@ -74,8 +79,14 @@ class FormController extends Controller
 
         ]);
 
+
+
+
         Session::flash('alert', 'success');
         Session::flash('message', "Registration completed successfully");
-        return back();
+        $data['breadcrums'] = SubMenu::where('id', 25)->first();
+        $data['email'] =$user['email'];
+        $data['name'] = $user['name']; 
+     return view('frontend.memphies',$data);
     }
 }
