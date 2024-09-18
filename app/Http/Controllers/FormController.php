@@ -105,7 +105,7 @@ class FormController extends Controller
         $data['name'] = $user['name'];
         $data['email'] = $user['email'];
         $data['phone'] = $user['phone'];
-        Mail::to('info@otegeeconcepts.com.ng')->send(new FormCreationEmail($data));
+        Mail::to('college-fair@otegeeconcepts.com.ng')->send(new FormCreationEmail($data));
         Session::flash('alert', 'success');
         Session::flash('message', "Registration completed successfully");
         $data['breadcrums'] = SubMenu::where('id', 25)->first();

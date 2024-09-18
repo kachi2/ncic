@@ -51,12 +51,12 @@
 
                 @if(isset($studentsReg))
               
-                <P style="padding-top:50px"> 
+                <P style="padding-top:20px"> 
                     @if(Session::has('message'))
                     <span class="alert alert-{{Session::get('alert')}} p-2"> {{Session::get('message')}}</span>
                     @endif
                     <br> <br>
-                ENTER INFORMATION BELOW TO CONTINUE REGISTRATION
+                <p style="color:#000"> ENTER INFORMATION BELOW TO CONTINUE REGISTRATION </p>
                 <form id="contrm" action="{{route('users.viewForm')}}" method="post" enctype="multipart/form-data">
                     @csrf
                       <div class="contact-form-content p-2">

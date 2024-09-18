@@ -101,18 +101,18 @@
                             <p>
                             <div class="row">
                                 <div class="col-md-4 col-6">
-                                    Name of Person: <br>
+                                    {{-- Name of Person: <br>
                                     Name of PARTNER:<br>
                                     Address:<br>
                                     Phone Number:<br>
-                                    Email Address:<br>
+                                    Email Address:<br> --}}
                                 </div>
                                 <div class="col-md-8 col-6" style="float: left; overflow:scroll">
-                                    <input style="border:none; border-bottom:1px solid #000; width:420px" value="RACHEAL AKANBI" readonly> <br>
-                                    <input style="border:none; border-bottom:1px solid #000; width:420px" value="OTEGEE CONCEPTS" readonly> <br>
-                                    <input style="border:none; border-bottom:1px solid #000; width:420px" value="4, ADO IBRAHIM STREET, YABA, LAGOS, NIGERIA" readonly> <br>
-                                    <input style="border:none; border-bottom:1px solid #000; width:420px"value="+234-705-827-4708" readonly> <br>
-                                    <input style="border:none; border-bottom:1px solid #000; width:420px" value="INFO@OTEGEECONCEPTS.COM.NG" readonly> <br>
+                                    Name of Person:  <input style="border:none; border-bottom:1px solid #000; width:420px" value="RACHEAL AKANBI" readonly> <br>
+                                    Name of PARTNER: <input style="border:none; border-bottom:1px solid #000; width:420px" value="OTEGEE CONCEPTS" readonly> <br>
+                                    Address:<input style="border:none; border-bottom:1px solid #000; width:420px" value="4, ADO IBRAHIM STREET, YABA, LAGOS, NIGERIA" readonly> <br>
+                                    Phone Number: <input style="border:none; border-bottom:1px solid #000; width:420px"value="+234-705-827-4708" readonly> <br>
+                                    Email Address:  <input style="border:none; border-bottom:1px solid #000; width:420px" value="INFO@OTEGEECONCEPTS.COM.NG" readonly> <br>
                                 </div>
 
                             </div>
@@ -201,7 +201,7 @@
                             @if (isset($users?->document))
                                 <img src="{{ asset('images/'.$users?->document) }}" width="100px">
                             @endif
-                            Did you used Offline Consent Form?
+                            Did you use the offline consent form?
                             <label for="file" style="background-color: #5cb85c;"> Cick here to upload Form </label>
                             <input type="file" id="file" name="document">
                             <span id="file-name" style="color:red"></span>
@@ -252,18 +252,15 @@
 
                                         <li> 1. Click the empty lines and enter required information </li>
                                         <li> 2. Click on Upload Signature</li>
-                                        <li> 3. Sign Signature on a white paper, snap and upload </li>
-                                        <li> 4. Upload Personal Statment </li>
+                                        <li> 3.Sign your  Signature on a white paper, snap and upload </li>
+                                        <li> 4. Upload Personal Statement </li>
                                         <li> 5. Upload your Resume </li>
                                         <li> 6. Click submit Form button to submit</li>
                                         <li> 7. Close window</li>
-
-
                                     </ul>
                                 </div>
                             </div>
-                            <p style="color:#072490; font-size:23px; font-weight:bolder"> YOU PREFER THE FILL THE FORM
-                                OFFLINE?</p>
+                            <p style="color:#072490; font-size:23px; font-weight:bolder"> If You Prefer to Fill the Consent Form Offline</p>
                             <a href="{{ asset('/images/ConsentForm.pdf') }}" target="_blank"
                                 class="btn btn-primary">CLICK HERE TO DOWNLOAD</a>
 
