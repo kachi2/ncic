@@ -51,7 +51,7 @@
 
                 @if(isset($studentsReg))
               
-                <P style="padding-top:20px"> 
+                <P style="padding-top:10px"> 
                     @if(Session::has('message'))
                     <span class="alert alert-{{Session::get('alert')}} p-2"> {{Session::get('message')}}</span>
                     @endif
@@ -61,18 +61,19 @@
                     @csrf
                       <div class="contact-form-content p-2">
                           <div class="row mb-20">
-                              <div class="col-lg-4">
+                              <div class="col-lg-6 p-2">
                                   <div class="form-input-item">
                                       <input type="text" name="name"  value="{{old('name')}}" placeholder="Your Name*" required/>
                                   </div>
                               </div>
 
-                              <div class="col-lg-4">
+                              <div class="col-lg-6 p-2">
                                   <div class="form-input-item">
                                       <input type="email" name="email" value="{{old('email')}}" placeholder="Your Email"/>
                                   </div>
                               </div>
-                              <div class="col-lg-4">
+                           
+                              <div class="col-lg-6 p-2">
                                 <div class="form-input-item">
                                     <input type="text" name="phone" value="{{old('phone')}}" placeholder="Your Phone"/>
                                 </div>
