@@ -100,16 +100,16 @@
                             </p>
                             <p>
                             <div class="row">
-                                <div class="col-md-4 col-6">
+                                {{-- <div class="col-md-4 col-6"> --}}
                                     {{-- Name of Person: <br>
                                     Name of PARTNER:<br>
                                     Address:<br>
                                     Phone Number:<br>
                                     Email Address:<br> --}}
-                                </div>
-                                <div class="col-md-8 col-6" style="float: left; overflow:scroll">
+                                {{-- </div> --}}
+                                <div class="col-md-12 col-12" style="float: left; overflow:scroll">
                                     Name of Person:  <input style="border:none; border-bottom:1px solid #000; width:420px" value="RACHEAL AKANBI" readonly> <br>
-                                    Name of PARTNER: <input style="border:none; border-bottom:1px solid #000; width:420px" value="OTEGEE CONCEPTS" readonly> <br>
+                                    Name of Partner: <input style="border:none; border-bottom:1px solid #000; width:420px" value="OTEGEE CONCEPTS" readonly> <br>
                                     Address:<input style="border:none; border-bottom:1px solid #000; width:420px" value="4, ADO IBRAHIM STREET, YABA, LAGOS, NIGERIA" readonly> <br>
                                     Phone Number: <input style="border:none; border-bottom:1px solid #000; width:420px"value="+234-705-827-4708" readonly> <br>
                                     Email Address:  <input style="border:none; border-bottom:1px solid #000; width:420px" value="INFO@OTEGEECONCEPTS.COM.NG" readonly> <br>
