@@ -260,7 +260,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <p style="color:#072490; font-size:23px; font-weight:bolder"> If You Prefer to Fill the Consent Form Offline</p>
+                            <p style="color:#072490; font-size:23px; font-weight:bolder"> If you prefer to fill the Consent Form offline</p>
                             <a href="{{ asset('/images/ConsentForm.pdf') }}" target="_blank"
                                 class="btn btn-primary">CLICK HERE TO DOWNLOAD</a>
 
