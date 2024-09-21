@@ -209,7 +209,7 @@
 
                         <p style="padding-top:20px">
                             @if (isset($users?->resume))
-                                <img src="{{ asset('images/'.$users?->parent_signature) }}" width="100px">
+                                <img src="{{ asset('images/'.$users?->resume) }}" width="100px">
                             @endif
                             <label for="Resume" style="background-color: #8c580f;"> Upload Your Resume </label>
                             <input type="file" id="Resume" name="resume">
