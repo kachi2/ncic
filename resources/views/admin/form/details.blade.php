@@ -124,14 +124,18 @@
                                             </div> --}}
 
                         
-                                            <p style="padding:20px 0px">
-                        
-                                                <button class="btn btn-primary w-50" id="downloadBtn" type="button"> Download Form</button>
-                                            </p>
+                                           
                                         </div>
                                         
                                         
                                     </div>
+                                    <center>
+                                    <p style="padding:20px 0px">
+                                        
+                                        <button class="btn btn-primary w-20" id="downloadBtn" type="button"> Download Form</button>
+                                    </p>
+                                </center>
+
                                 </div>
                                 
                             </div>
