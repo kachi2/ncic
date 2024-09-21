@@ -50,10 +50,10 @@
                                                     <a href="{{asset('images/'.$sp->document)}}" download="">Download {{$sp->document}}</a>
                                                 </td>  
                                                 <td>
-                                                    <a href="{{asset('images/'.$sp->personal_statement)}}" download="">Download {{$sp->personal_statement}}</a>
+                                                    <a href="{{asset('images/'.$sp->personal_statement)}}" download="" class="badge bg-primary"><span class="badge bg-primary"> Download</span>  {{$sp->personal_statement}}</a>
                                                 </td>  
                                                 <td>
-                                                    <a href="{{asset('images/'.$sp->resume)}}" download="">Download {{$sp->resume}}</a>
+                                                    <a href="{{asset('images/'.$sp->resume)}}" download="" > <span class="badge bg-primary"> Download</span>  {{$sp->resume}}</a>
                                                 </td> 
                                                   <td>
                                                     <a href="#">{{$sp->created_at}}</a>
