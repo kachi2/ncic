@@ -50,8 +50,8 @@
                                                 <tr>
                                                     <td width="150">Consent Form</td>
                                                     <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-                                                    <td> <a href="{{ asset('images/' . $data['document']) }}"
-                                                            download=""> Download Consent Form</a></td>
+                                                    <td> @if(isset($data['document'])) <a href="{{ asset('images/' . $data['document']) }}"
+                                                            download=""> Download Consent Form</a> @endif</td>
                                                 <tr>
                                                 <tr>
                                                     <td width="150">Personal Statment</td>
