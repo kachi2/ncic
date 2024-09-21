@@ -65,7 +65,7 @@ class FormController extends Controller
             $image = $request->file('document');
             $fileName = $image->getClientOriginalName();
             $ext = $image->getClientOriginalExtension();
-            $fileName = $fileName.time().'.'.$ext;
+            $document = $fileName.time().'.'.$ext;
             $image->move('images',$fileName);
         }
         if($request->parent_signature){
@@ -100,7 +100,7 @@ class FormController extends Controller
             'student_signature' => $student_signature??'',
             'parent_name' => $request->parent_name,
             'parent_signature' => $parent_signature??null,
-            'document' => $fileName??null,
+            'document' => $document??null,
             'resume' => $resume??null,
             'personal_statement' => $personal_statement??null,
         ];
