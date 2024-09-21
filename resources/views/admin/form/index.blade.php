@@ -31,7 +31,7 @@
                                                 <th>Personal Statement</th>
                                                 <th>Resume</th>
                                                  <th>Created At</th>
-                                                <th>Action</th>
+                                                {{-- <th>Action</th> --}}
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -47,10 +47,10 @@
                                                     <a href="#">{{$sp->email}}</a>
                                                 </td>  
                                                 <td>
-                                                    <a href="{{asset('images/'.$sp->document)}}" download="">Download {{$sp->document}}</a>
+                                                    <a href="{{asset('images/'.$sp->document)}}" download=""> @if($sp->document) Download {{$sp->document}} @else <a href="{{route('admin.form.viewDetails',$sp->email)}}" class="badge bg-info"> View Details</a>  @endif</a>
                                                 </td>  
                                                 <td>
-                                                    <a href="{{asset('images/'.$sp->personal_statement)}}" download="" class="badge bg-primary"><span class="badge bg-primary"> Download</span>  {{$sp->personal_statement}}</a>
+                                                    <a href="{{asset('images/'.$sp->personal_statement)}}" download=""><span class="badge bg-primary"> Download</span>  {{$sp->personal_statement}}</a>
                                                 </td>  
                                                 <td>
                                                     <a href="{{asset('images/'.$sp->resume)}}" download="" > <span class="badge bg-primary"> Download</span>  {{$sp->resume}}</a>
@@ -58,9 +58,9 @@
                                                   <td>
                                                     <a href="#">{{$sp->created_at}}</a>
                                                 </td>
-                                                <td class="">
+                                                {{-- <td class="">
                                                         @if(!isset($sp->document)) <a href="{{route('admin.form.viewDetails',$sp->email)}}" class="badge bg-info"> View Details</a> @else <a href="{{asset('images/'.$sp->document)}}" target="_blank" class="badge bg-success" download=""> Download Form</a> @endif
-                                                </td>
+                                                </td> --}}
                                             </tr>
                                               @endforeach
                                               @else 
