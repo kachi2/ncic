@@ -50,10 +50,10 @@
                                                     <a href="{{asset('images/'.$sp->document)}}" download=""> @if($sp->document) Download {{$sp->document}} @else <a href="{{route('admin.form.viewDetails',$sp->email)}}" class="badge bg-info"> View Details</a>  @endif</a>
                                                 </td>  
                                                 <td>
-                                                    <a href="{{asset('images/'.$sp->personal_statement)}}" download=""><span class="badge bg-primary"> Download</span>  {{$sp->personal_statement}}</a>
+                                                    @if(isset($sp->personal_statement))    <a href="{{asset('images/'.$sp->personal_statement)}}" download="">  <span class="badge bg-primary"> Download</span>  {{$sp->personal_statement}} </a>@endif
                                                 </td>  
                                                 <td>
-                                                    <a href="{{asset('images/'.$sp->resume)}}" download="" > <span class="badge bg-primary"> Download</span>  {{$sp->resume}}</a>
+                                                    @if(isset($sp->resume))   <a href="{{asset('images/'.$sp->resume)}}" download="" > <span class="badge bg-primary"> Download</span>  {{$sp->resume}}</a> @endif
                                                 </td> 
                                                   <td>
                                                     <a href="#">{{$sp->created_at}}</a>
