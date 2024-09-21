@@ -41,7 +41,7 @@ class FormController extends Controller
         $validate = Validator::make($request->all(), [
                 'resume' => 'required',
                 'personal_statement' => 'required',
-                'parent_signature' => ['required', 'mimes:jpg,png,jpeg'],
+                'parent_signature' => 'mimes:jpg,png,jpeg',
                 'student_signature' => ['required','mimes:jpg,png,jpeg'],
         ]);
         if($validate->fails())
