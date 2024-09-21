@@ -41,8 +41,8 @@ class FormController extends Controller
         $validate = Validator::make($request->all(), [
                 'resume' => 'required',
                 'personal_statement' => 'required',
-                'parent_signature' => 'required,mimes:jpg,png,jpeg',
-                'student_signature' => 'required,mimes:jpg,png,jpeg',
+                'parent_signature' => ['required', 'mimes:jpg,png,jpeg'],
+                'student_signature' => ['required','mimes:jpg,png,jpeg'],
         ]);
         if($validate->fails())
         {
@@ -79,7 +79,7 @@ class FormController extends Controller
             $student_signature = time().'.'.$ext;
             $image->move('images',$student_signature);
         }
-        if($request->personal_statment){
+        if($request->personal_statement){
             $image = $request->file('personal_statement');
             $ext = $image->getClientOriginalExtension();
             $personal_statement = time().'.'.$ext;
@@ -92,16 +92,16 @@ class FormController extends Controller
             $image->move('images',$resume);
         }
         $data = [
-            'date_signed' => Carbon::now(),
             'student_signature' => $student_signature??'',
             'parent_name' => $request->parent_name,
-            'parent_date_signed'  => Carbon::now(),
             'parent_signature' => $parent_signature??null,
             'document' => $fileName??null,
             'resume' => $resume??null,
             'personal_statement' => $personal_statement??null,
         ];
-        $user->update([$data]);
+
+        
+        $user->update($data);
         $data['name'] = $user['name'];
         $data['email'] = $user['email'];
         $data['phone'] = $user['phone'];
