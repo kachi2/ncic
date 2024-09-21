@@ -41,8 +41,8 @@ class FormController extends Controller
         $validate = Validator::make($request->all(), [
                 'resume' => 'required',
                 'personal_statement' => 'required',
-                'parent_signature' => 'mimes:jpg,png,jpeg',
-                'student_signature' => 'mimes:jpg,png,jpeg',
+                'parent_signature' => 'required,mimes:jpg,png,jpeg',
+                'student_signature' => 'required,mimes:jpg,png,jpeg',
         ]);
         if($validate->fails())
         {
@@ -80,10 +80,10 @@ class FormController extends Controller
             $image->move('images',$student_signature);
         }
         if($request->personal_statment){
-            $image = $request->file('personal_statment');
+            $image = $request->file('personal_statement');
             $ext = $image->getClientOriginalExtension();
-            $personal_statment = time().'.'.$ext;
-            $image->move('images',$personal_statment);
+            $personal_statement = time().'.'.$ext;
+            $image->move('images',$personal_statement);
         }
         if($request->resume){
             $image = $request->file('resume');
@@ -99,7 +99,7 @@ class FormController extends Controller
             'parent_signature' => $parent_signature??null,
             'document' => $fileName??null,
             'resume' => $resume??null,
-            'personal_statement' => $personal_statment??null,
+            'personal_statement' => $personal_statement??null,
         ];
         $user->update([$data]);
         $data['name'] = $user['name'];
