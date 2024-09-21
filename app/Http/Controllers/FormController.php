@@ -63,32 +63,37 @@ class FormController extends Controller
         // }
           if($request->document){
             $image = $request->file('document');
+            $fileName = $image->getClientOriginalName();
             $ext = $image->getClientOriginalExtension();
-            $fileName = time().'.'.$ext;
+            $fileName = $fileName.time().'.'.$ext;
             $image->move('images',$fileName);
         }
         if($request->parent_signature){
             $image = $request->file('parent_signature');
+            $fileName = $image->getClientOriginalName();
             $ext = $image->getClientOriginalExtension();
-            $parent_signature = time().'.'.$ext;
+            $parent_signature = $fileName.time().'.'.$ext;
             $image->move('images',$parent_signature);
         }
         if($request->student_signature){
             $image = $request->file('student_signature');
+            $fileName = $image->getClientOriginalName();
             $ext = $image->getClientOriginalExtension();
-            $student_signature = time().'.'.$ext;
+            $student_signature = $fileName.time().'.'.$ext;
             $image->move('images',$student_signature);
         }
         if($request->personal_statement){
             $image = $request->file('personal_statement');
+            $fileName = $image->getClientOriginalName();
             $ext = $image->getClientOriginalExtension();
             $personal_statement = time().'.'.$ext;
             $image->move('images',$personal_statement);
         }
         if($request->resume){
             $image = $request->file('resume');
+            $fileName = $image->getClientOriginalName();
             $ext = $image->getClientOriginalExtension();
-            $resume = time().'.'.$ext;
+            $resume = $fileName.time().'.'.$ext;
             $image->move('images',$resume);
         }
         $data = [
