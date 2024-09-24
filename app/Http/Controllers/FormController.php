@@ -57,21 +57,21 @@ class FormController extends Controller
             $image = $request->file('document');
             $fileName = $image->getClientOriginalName();
             $ext = $image->getClientOriginalExtension();
-            $document = $fileName.time().'.'.$ext;
+            $consentForm =  $fileName;
             $image->move('images',$fileName);
         }
         if($request->parent_signature){
             $image = $request->file('parent_signature');
             $fileName = $image->getClientOriginalName();
             $ext = $image->getClientOriginalExtension();
-            $parent_signature = $fileName.time().'.'.$ext;
+            $parent_signature = $fileName;
             $image->move('images',$parent_signature);
         }
         if($request->student_signature){
             $image = $request->file('student_signature');
             $fileName = $image->getClientOriginalName();
-            $ext = $image->getClientOriginalExtension();
-            $student_signature = $fileName.time().'.'.$ext;
+            // $ext = $image->getClientOriginalExtension();
+            $student_signature = $fileName;
             $image->move('images',$student_signature);
         }
         if($request->personal_statement){
@@ -85,14 +85,14 @@ class FormController extends Controller
             $image = $request->file('resume');
             $fileName = $image->getClientOriginalName();
             $ext = $image->getClientOriginalExtension();
-            $resume = $fileName.time().'.'.$ext;
+            $resume = $fileName;
             $image->move('images',$resume);
         }
         $data = [
             'student_signature' => $student_signature??'',
             'parent_name' => $request->parent_name,
             'parent_signature' => $parent_signature??null,
-            'document' => $document??null,
+            'document' => $consentForm??null,
             'resume' => $resume??null,
             'personal_statement' => $personal_statement??null,
         ];
