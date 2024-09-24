@@ -16,14 +16,6 @@ class FormController extends Controller
 {
     public function viewForm(Request $request)
     {
-        $check = FormApplicants::where('email', $request->email)->first();
-        if($check)
-        {
-            Session::flash('alert', 'danger');
-            Session::flash('message', "email already registered");
-            $data['users'] =  FormApplicants::where('email', $request->email)->first();
-           return view('frontend.memphies',$data);
-        }
          FormApplicants::create([
             'email' => $request->email,
             'name' => $request->name,
