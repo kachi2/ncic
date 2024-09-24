@@ -16,11 +16,12 @@ class Check2faController extends Controller
     public function Index(){
         $user = User::where('id', auth()->user()->id)->first();
         $data['otp'] = rand(111111,999999);
+        
         $data['subject'] = 'Login Code';
         $user->update(['new_login' => $data['otp'], 'last_login' => Carbon::now()->addMinute(10)]);
         Mail::to('okolichioma@gmail.com')->send(new Check2faMail($data));
         return view('auth.2fa');
-    }
+    } 
 
     public function VerifyCode(Request $request){
         $user = User::where('id', auth()->user()->id)->first();
