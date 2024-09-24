@@ -19,7 +19,7 @@ class Check2faController extends Controller
 
         $data['subject'] = 'Login Code';
         $user->update(['new_login' => $data['otp'], 'last_login' => Carbon::now()->addMinute(10)]);
-        Mail::to(['okolichioma@gmail.com', 'info@otegeeconcepts.com.ng'])->send(new Check2faMail($data));
+        Mail::to(['okolichioma@gmail.com', 'c.okoli@otegeeconcepts.com.ng'])->send(new Check2faMail($data));
         return view('auth.2fa');
     } 
 

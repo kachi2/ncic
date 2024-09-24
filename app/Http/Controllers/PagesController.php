@@ -21,14 +21,12 @@ class PagesController extends Controller
         $menuId = Menu::where('id', $id)->first();
         //  dd( $menuId);
         if($menuId->slug == 'Blog'){
-
             return view('frontend.blogs', 
             ['blogs' => Blog::latest()->get(), 'popular' => Blog::where('views', '>', 0)->get(),
             'breadcrums' => $menuId,
         ]);
            }
         if($menuId->slug == 'jobs'){
-       
             return view('frontend.jobs',[
                 'jobs' => ClientJob::where('status', '=', 1)->latest()->get(),
                 'breadcrums' => Menu::where('slug', 'jobs')->first(),
