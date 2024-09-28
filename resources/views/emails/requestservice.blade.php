@@ -10,8 +10,8 @@
                 <img style="max-height:50px;width:auto" src="{{asset('assets/'.$settings->logo)}}" alt=" logo" class="CToWUd">
             </td>
         </tr>
-        </tbody>
-    </table>
+        </tbody> 
+    </table> 
                     <table style="width:100%;max-width:620px;margin:0 auto;background-color:#ffffff">
         <tbody>
                 <tr>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\FormCreationEmail;
+use App\Mail\SchoolFairMail;
 use App\Models\FormApplicants;
 use App\Models\SubMenu;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -24,6 +25,7 @@ class FormController extends Controller
             'parent_date_signed' => Carbon::now(),
         ]);
         $data['users'] =  FormApplicants::where('email', $request->email)->first();
+        Mail::to([$request->email, 'noreply@otegeeconcepts.com.ng'])->send(new SchoolFairMail(['name' => $request->name]));
        return view('frontend.memphies',$data);
     }
 
