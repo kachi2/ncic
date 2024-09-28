@@ -1,7 +1,7 @@
 <div width="100%" style="margin:0;padding:0!important;background-color:#f5f6fa">
     <span style="width:100%;background-color:#f5f6fa">
         <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f5f6fa">
-            <tbody>
+            <tbody> 
                 <tr>
                     <td style="padding:30px 0">
                         <table style="width:100%;max-width:620px;margin:0 auto">
