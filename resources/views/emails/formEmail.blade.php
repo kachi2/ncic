@@ -54,7 +54,7 @@
                                                             download=""> Download Consent Form</a> @endif</td>
                                                 <tr>
                                                 <tr>
-                                                    <td width="150">Personal Statment</td>
+                                                    <td width="150">Personal Statement</td>
                                                     <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
                                                     <td> <a href="{{ asset('images/'.$data['personal_statement']) }}"
                                                             download=""> Download Personal Statement</a></td>
