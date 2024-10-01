@@ -61,19 +61,19 @@
                           <div class="row mb-20">
                               <div class="col-lg-6 p-2">
                                   <div class="form-input-item">
-                                      <input type="text" name="name"  value="{{old('name')}}" placeholder="Your Name*" required/>
+                                      <input type="text" name="name" class="form control @error('name') is-invalid @enderror"  value="{{old('name')}}" placeholder="Your Name*" required/>
                                   </div>
                               </div>
 
                               <div class="col-lg-6 p-2">
                                   <div class="form-input-item">
-                                      <input type="email" name="email" value="{{old('email')}}" placeholder="Your Email"/>
+                                      <input type="email" name="email" class="@error('email') is-invalid @enderror" value="{{old('email')}}" placeholder="Your Email" required/>
                                   </div>
                               </div>
                            
                               <div class="col-lg-6 p-2">
                                 <div class="form-input-item">
-                                    <input type="text" name="phone" value="{{old('phone')}}" placeholder="Your Phone"/>
+                                    <input type="text" name="phone" @error('phone') is-invalid @enderror  value="{{old('phone')}}" placeholder="Your Phone" required/>
                                 </div>
                             </div>
                             </div>

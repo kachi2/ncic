@@ -24,7 +24,8 @@ class FormController extends Controller
     ]);
     if($validate->fails())
     {
-        return back();
+        
+        return back()->withInput($request->all());
     }
         $chk = FormApplicants::where('email', $request->email)->first();
         if(!$chk){
