@@ -17,6 +17,8 @@ class FormController extends Controller
 {
     public function viewForm(Request $request)
     {
+        $chk = FormApplicants::where('email', $request->email)->first();
+        if(!$chk){
          FormApplicants::create([
             'email' => $request->email,
             'name' => $request->name,
@@ -24,6 +26,7 @@ class FormController extends Controller
             'date_signed' => Carbon::now(),
             'parent_date_signed' => Carbon::now(),
         ]);
+    }
         $data['users'] =  FormApplicants::where('email', $request->email)->first();
         Mail::to([$request->email, 'noreply@otegeeconcepts.com.ng'])->send(new SchoolFairMail(['name' => $request->name]));
        return view('frontend.memphies',$data);
@@ -33,10 +36,10 @@ class FormController extends Controller
     {
         $user = FormApplicants::where('email', $request->email)->first();
         $validate = Validator::make($request->all(), [
-                'resume' => 'required',
-                'personal_statement' => 'required',
+                'resume' => 'nullable',
+                'personal_statement' => 'nullable',
                 'parent_signature' => 'mimes:jpg,png,jpeg',
-                'student_signature' => ['required','mimes:jpg,png,jpeg'],
+                'student_signature' => ['nullable','mimes:jpg,png,jpeg'],
         ]);
         if($validate->fails())
         {

@@ -86,7 +86,6 @@
           @include('admin.layouts.sidebar')
         </div>
         <!-- end::navigation menu -->
-
     </div>
     
  <div class="main-content">
