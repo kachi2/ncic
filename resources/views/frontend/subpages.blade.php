@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('contents')
 @if(isset($breadcrums))
-<div class="page-header-area" style="background: #ddd url('{{asset('/images/'.$breadcrums->image)}}')  center">
+<div class="page-header-area" style="background: #ddd url('{{asset('images/'.$breadcrums->image)}}')  center">
    @else 
    <div class="page-header-area" style="background: #ddd url('{{asset('/images')}}') no-repeat center">
    @endif
@@ -28,8 +28,6 @@
     <div class="service-details-page-wrap">
         <div class="container">
             <div class="row">
-            
-
                 <div class="col-lg-9 order-0">
                     <div class="service-details-content">
                         <h2>{{$pages->title}}</h2>
