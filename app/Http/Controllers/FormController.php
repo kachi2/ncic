@@ -17,6 +17,15 @@ class FormController extends Controller
 {
     public function viewForm(Request $request)
     {
+        $validate = Validator::make($request->all(), [
+            'email' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+    ]);
+    if($validate->fails())
+    {
+        return back();
+    }
         $chk = FormApplicants::where('email', $request->email)->first();
         if(!$chk){
          FormApplicants::create([
