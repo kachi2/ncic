@@ -197,7 +197,7 @@
                         </div>
 
                     </div> --}}
-                        <p style="padding-top:20px">
+                        {{-- <p style="padding-top:20px">
                             @if (isset($users?->document))
                                 <img src="{{ asset('images/'.$users?->document) }}" width="100px">
                             @endif
@@ -205,18 +205,18 @@
                             <label for="file" style="background-color: #5cb85c;"> Cick here to upload Form </label>
                             <input type="file" id="file" name="document">
                             <span id="file-name" style="color:red"></span>
-                        </p>
+                        </p> --}}
 
-                        <p style="padding-top:20px">
+                        {{-- <p style="padding-top:20px">
                             @if (isset($users?->resume))
                                 <img src="{{ asset('images/'.$users?->resume) }}" width="100px">
                             @endif
                             <label for="Resume" style="background-color: #8c580f;"> Upload Your Resume </label>
                             <input type="file" id="Resume" name="resume">
                             <span id="Resume-file" style="color:red"></span>
-                        </p>
+                        </p> --}}
 
-                        <p style="padding-top:20px">
+                        {{-- <p style="padding-top:20px">
                             @if (isset($users?->personal_statement))
                                 <img src="{{ asset('images/'.$users?->personal_statement) }}" width="100px">
                             @endif
@@ -224,7 +224,7 @@
                             </label>
                             <input type="file" id="Statement" name="personal_statement">
                             <span id="Statement-file" style="color:red"></span>
-                        </p>
+                        </p> --}}
 
 
                         <p style="padding-top:10px"> @php echo captcha_img() @endphp </p>
@@ -253,15 +253,13 @@
                                         <li> 1. Click the empty lines and enter required information </li>
                                         <li> 2. Click on Upload Signature</li>
                                         <li> 3.Sign your  Signature on a white paper, snap and upload </li>
-                                        <li> 4. Upload Personal Statement </li>
-                                        <li> 5. Upload your Resume </li>
                                         <li> 6. Click submit Form button to submit</li>
                                         <li> 7. Close window</li>
                                     </ul>
                                 </div>
                             </div>
                             <p style="color:#072490; font-size:23px; font-weight:bolder"> If you prefer to fill the Consent Form offline</p>
-                            <a href="{{ asset('/images/ConsentForm.pdf') }}" target="_blank"
+                            <a href="{{ asset('/images/tmp/ConsentForm_oteFile.pdf') }}" target="_blank"
                                 class="btn btn-primary">CLICK HERE TO DOWNLOAD</a>
 
                         </aside>

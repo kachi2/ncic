@@ -33,7 +33,7 @@ class FormCreationEmail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'New Form Registation',
+            subject: 'New Form Registration',
             from: new Address('contact@otegeeconcepts.com', 'otegeeconcepts'),
         );
     }

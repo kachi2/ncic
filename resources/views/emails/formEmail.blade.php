@@ -41,24 +41,24 @@
                                                     <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
                                                     <td> {{ $data['phone'] }}</td>
                                                 <tr>
-                                                <tr>
+                                                {{-- <tr>
                                                     <td width="150">Resume</td>
                                                     <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
                                                     <td> <a href="{{ asset('images/' . $data['resume']) }}"
                                                             download=""> Download Resume</a></td>
-                                                <tr>
+                                                <tr> --}}
                                                 <tr>
                                                     <td width="150">Consent Form</td>
                                                     <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
                                                     <td> @if(isset($data['document'])) <a href="{{ asset('images/' . $data['document']) }}"
                                                             download=""> Download Consent Form</a> @endif</td>
                                                 <tr>
-                                                <tr>
+                                                {{-- <tr>
                                                     <td width="150">Personal Statement</td>
                                                     <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
                                                     <td> <a href="{{ asset('images/'.$data['personal_statement']) }}"
                                                             download=""> Download Personal Statement</a></td>
-                                                <tr>
+                                                <tr> --}}
 
                                             </tbody>
                                         </table>
