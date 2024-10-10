@@ -20,18 +20,14 @@
                                 <tr>
                                     <td style="padding:10px 30px 10px">
                                        <p> Hello {{$data['name']}},</p>  
-                                       <p>Thank you for expressing interest in attending the University of Memphis school fair in Lagos.</p>  
-                                        <p>To finalize your registration and reserve your spot, please <a href="https://memphis.co1.qualtrics.com/jfe/form/SV_0cAoqI5270FpxdQ"> click here.</a>
-                                        </p>
-                                        <p>  or follow link below</p>
-                                      
-                                        <p><a href="https://memphis.co1.qualtrics.com/jfe/form/SV_0cAoqI5270FpxdQ">https://memphis.co1.qualtrics.com/jfe/form/SV_0cAoqI5270FpxdQ </a> 
-                                        </p>
-                                        <p>We look forward to seeing you at the event!</p>
-                                        
-                                        <p> Warm regards,</p>
+                                      <p>Thank you for expressing your interest in studying at the University of Memphis. </p> 
+
+                                      <p> We will send you an invitation to our Zoom Knowledge Sharing Session shortly. Kindly check your email and spam folder for our email.</p> 
                                        
-                                        <p>Oteegee Concepts</p>
+                                      <p>We look forward to seeing you at the meeting. </p> 
+                                       
+                                       <p>Warm regards, </p> 
+                                       <p> Otegee Concepts </p>
                                     </td>
                                 <tr>
                                     <td style="padding:0 30px">
